@@ -57,5 +57,6 @@ class DevisFactureAdmin(admin.ModelAdmin):
 
 admin.site.register(Devis_Societe,DevisFactureAdmin)
 admin.site.register(Devis_Association,DevisFactureAdmin)
-
+admin.site.register(Facture_Societe,DevisFactureAdmin)
+admin.site.register(Facture_Association,DevisFactureAdmin)
 
