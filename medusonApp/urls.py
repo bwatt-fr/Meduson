@@ -5,10 +5,12 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+
+	(r'^$','medusonApp.views.index'),
+	(r'clients/','medusonApp.views.clients'),
     # Examples:
 
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^db/',include('medusonApp.urls')),
+
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
 )

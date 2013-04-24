@@ -105,7 +105,7 @@ class Liste_Materiel(models.Model):
 
 
 class Devis_Facture(models.Model):
-    domaine = models.ManyToManyField(Domaine)
+    domaine = models.ForeignKey(Domaine)
     projet = models.ForeignKey(Projet)
     date = models.DateField()
     date_paiement = models.DateField()
