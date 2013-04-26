@@ -1,0 +1,11 @@
+<h1>Gestion des clients</h1>
+<a href="nouveau">Ajouter un nouveau client</a>
+{% if clients_list %}
+	<ul>
+	{% for client in clients_list %}
+		<li>{{client.abreviation}} <a href = "{{client.id_spec}}">Détail</a> <a href = "">Supprimer</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>Aucun client dans la base de données</p>
+{% endif %}

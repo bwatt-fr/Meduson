@@ -1,0 +1,39 @@
+<h2>Ajouter un client</h2>
+<form action ="/db/clients/nouveau/" method="post">
+<p>
+	<label>3 lettre identifiants le client* : </label><input type="text" name="identifiant"/>
+</p>
+<p>
+	<label>Abreviation, permet d'identifier le client dans la base facture. Le nom de la société si il y en a une, sinon nom + prénom * : </label><input type="text" name="abreviation"/>
+</p>
+<p>
+	<label>Société : </label><input type="text" name="societe"/>
+</p>
+<p>
+	<label>Nom : </label><input type="text" name="nom"/>
+</p>
+<p>
+	<label>Prénom : </label><input type="text" name="prenom"/>
+</p>
+<p>
+	<label>Adresse postale : </label><input type="text" name="adresse_postale"/>
+</p>
+<p>
+	<label>Ville : </label><input type="text" name="ville"/>
+</p>
+<p>
+	<label>Code postal : </label><input type="text" name="code_postal"/>
+</p>
+<p>
+	<label>Pays : </label><input type="text" name="pays"/>
+</p>
+<p>
+	<label>Téléphone 1 : </label><input type="text" name="telephone1"/>
+</p>
+<p>
+	<label>Téléphone 2 : </label><input type="text" name="telephone2"/>
+</p>
+<p>
+	<label>Adresse mail : </label><input type="text" name="mail"/>
+</p>
+<input type="submit" value="Ajouter le client"/>

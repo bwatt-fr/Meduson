@@ -61,8 +61,9 @@ class Accessoire(models.Model):
         return self.nom
 
 class Client(models.Model):
-    numero = models.CharField(max_length=7,primary_key=True)
-    societe = models.CharField(max_length=50)
+    id_spec = models.AutoField(unique=True,primary_key=True)
+    id_lettre = models.CharField(max_length=4)
+    societe = models.CharField(max_length=50,blank = True)
     nom = models.CharField(max_length=50,blank=True)
     prenom = models.CharField(max_length=50,blank=True)
     adresse_postale = models.CharField(max_length=100,blank=True)
@@ -71,10 +72,11 @@ class Client(models.Model):
     pays = models.CharField(max_length=50,blank=True)
     telephone1 = models.CharField(max_length=20,blank=True)
     telephone2 = models.CharField(max_length=20,blank=True)
+    mail = models.CharField(max_length=100,blank=True)
     abreviation = models.CharField(max_length=50)
 
     def __unicode__(self):
-        return self.societe
+        return self.id_lettre + str(self.id_spec)
 
 class Periode(models.Model):
     debut = models.DateField()
@@ -89,7 +91,7 @@ class Projet(models.Model):
     referent = models.ForeignKey(Personne)
 
     def __unicode__(self):
-        return self.client.societe + ' - ' + str(self.id)
+        return self.client.abreviation + ' - ' + str(self.id)
 
 class Periode_Projet(Periode):
     projet = models.ForeignKey(Projet)
